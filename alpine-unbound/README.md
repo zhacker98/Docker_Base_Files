@@ -9,3 +9,17 @@ https://wiki.alpinelinux.org/wiki/Setting_up_unbound_DNS_server
 https://www.unbound.net/documentation/index.html
 
 
+------------
+
+Mod to suit your environments needs
+
+-------------
+
+USAGE:
+
+  docker build . -t alpine-unbound
+  
+  docker run -d --name local-unbound-dns -p53:53/udp alpine-unbound
+  
+  
+
