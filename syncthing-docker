@@ -1,0 +1,20 @@
+## EXCERPT FROM http://web.ist.utl.pt/joao.leao.guerreiro/post/alpinedocker/
+#!/bin/bash
+if [ ! -d "$HOME/sync" ]; then
+  mkdir $HOME/sync
+fi
+
+if [ ! -d "$HOME/sync_config" ]; then
+  mkdir $HOME/sync_config
+fi
+
+docker run -d \
+  --name syncthing \
+  --restart always \
+  -e PGID=$(id -g) -e PUID=$(id -u)  \
+  -v "$HOME/sync:/mnt/sync" \
+  -v "$HOME/sync_config:/config" \
+  -v /etc/localtime:/etc/localtime:ro \
+  -p 8384:8384 -p 22000:22000 -p 21027:21027/udp \
+  linuxserver/syncthing
+timeout docker logs -f syncthing || true
