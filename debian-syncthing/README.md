@@ -22,3 +22,6 @@ docker cp <src_file> syncthing:/root/Sync/
 docker container rm -f -v syncthing
 
 ###### Otherwise, use 'docker container inspect' to determine the volume name and export the contents
+### Or run the following to open a container, and export the contents to a tar in the current working directory
+docker run -it --rm --volumes-from syncthing -v$(pwd):/root/Backup/ alpine tar cjf root/Backup/sync_backup.tar.bz2 root/Sync/
+
