@@ -1,6 +1,6 @@
-## Syncthing in a container
+# Syncthing in a container
 
-# Usage:
+## Usage:
 
 ### Build:
 docker build . -t debian-syncthing
@@ -14,7 +14,10 @@ docker cp <src_file> syncthing:/root/Sync/
 
 ##### Once you add a remote endpoint in the gui, they will start syncing
 
+
+
 ##### The folder /root/Sync is stored in a Docker Volume so data will remain until the volume is destroyed
+
 ##### So if you remove the container, and want the data purged, run the following...
 docker container rm -f -v syncthing
 
