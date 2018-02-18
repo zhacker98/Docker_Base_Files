@@ -1,0 +1,29 @@
+server:
+  addr: ":5001"
+ 
+token:
+  issuer: "ACME auth server - aa8AhshuoCh5eade"
+  expiration: 900
+  certificate: "/config/cert.pem"
+  key: "/config/private.pem"
+ 
+users:
+  admin: bcrypt_hashed_admin_password
+  readonly: bcrypt_hashed_read_only_password
+  someuser: bcrypt_hashed_stuff_password
+ 
+acl:
+  - match:
+      account: "admin"
+    actions: ["*"]
+    comment: "Admin has full access to everything."
+  - match:
+      account: "readonly"
+    actions: ["pull"]
+    comment: "Read only access."
+  - match:
+      account: "someuser"
+      name: "someuser/*"
+    actions: ["*"]
+    comment: "User can access his own namespace"
+

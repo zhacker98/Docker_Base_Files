@@ -1,0 +1,6 @@
+auth:
+  token:
+    realm: https://foo.bar.com/auth
+    service: docker.foo.bar.com:443
+    issuer: "ACME auth server - aa8AhshuoCh5eade"
+    rootcertbundle: /config/cert.pem
