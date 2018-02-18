@@ -17,5 +17,7 @@ docker exec rapid-registry htpasswd -Bb auth/htpasswd <new_user> <user_pass>
 
 ###### The included htpasswd already has two example users, then can be removed and were just a placeholder
 
+#### Issues with connecting to the registry via 'docker login http://my.rapid-registry.domain:5000'
+#### If so, you may need to modify the client docker configuration
 ##### After docker 1.12, you will need to add the following to /etc/docker/daemon.json or create the file if it does not exist
 { "insecure-registries":["<your_registry>:5000"] }
