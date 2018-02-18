@@ -16,3 +16,6 @@ htpasswd -B auth/htpasswd <new_user> # You will be prompted for the password
 docker exec rapid-registry htpasswd -Bb auth/htpasswd <new_user> <user_pass> 
 
 ###### The included htpasswd already has two example users, then can be removed and were just a placeholder
+
+##### After docker 1.12, you will need to add the following to /etc/docker/daemon.json or create the file if it does not exist
+{ "insecure-registries":["<your_registry>:5000"] }
