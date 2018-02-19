@@ -66,3 +66,8 @@ docker run -d --restart=always --name registry-${DomainName} -v`pwd`/auth:/auth 
 
 echo "Showing running registry for - ${DomainName}"
 docker container ps -l
+
+echo
+echo "You will need to copy the domain.crt from ${AuthDir} to all clients using the registry"
+echo "rsync -avz ${AuthDir}/domain.crt <user>@<host>:/etc/docker/certs.d/<registry_fqdn>:<port>/client.crt"
+echo "The /etc/docker/certs.d/ directory may need to be created"
