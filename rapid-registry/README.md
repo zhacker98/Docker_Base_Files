@@ -13,7 +13,7 @@ docker run -it --rm -p5005:5000 -v`pwd`/auth:/auth rapid-registry
 ##### Adding Users:
 ###### On host system
 htpasswd -B auth/htpasswd <new_user> # You will be prompted for the password
-# Existing htpasswd contains one user newuser with a password of newpassword
+##### Existing htpasswd contains one user, newuser/newpassword
 
 ###### Inside the registry container
 docker exec rapid-registry htpasswd -Bb auth/htpasswd <new_user> <user_pass> 
