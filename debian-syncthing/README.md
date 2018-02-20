@@ -9,6 +9,9 @@ docker build . -t debian-syncthing
 docker run -d --name syncthing -p8384:8384 -p22000:22000 debian-syncthing
 
 #### Web GUI is available at http://localhost:8384
+###### Obtain the syncthing ID with the following command
+###### docker logs syncthing|grep 'My ID'
+
 ### Add files with these commands:
 docker cp <src_file> syncthing:/root/Sync/
 
