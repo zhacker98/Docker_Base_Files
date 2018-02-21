@@ -8,7 +8,7 @@
 docker build . -t rapid-registry
 
 #### Run:
-docker run -it --rm -p50055000 -v$(pwd)auth:/auth rapid-registry
+docker run -it --rm -p5000:5000 -v$(pwd)auth:/auth rapid-registry
 
 ##### Adding Users:
 ###### On host system
