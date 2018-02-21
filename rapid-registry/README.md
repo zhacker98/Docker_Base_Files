@@ -11,7 +11,7 @@ docker build . -t rapid-registry
 docker run -it --rm -p5000:5000 -v$(pwd)auth:/auth rapid-registry
 
 ##### Adding Users:
-###### On host system
+###### On host system # Requires that 'apache2-utils' be installed
 htpasswd -B auth/htpasswd <new_user> # You will be prompted for the password
 ##### Existing htpasswd contains one user, newuser/newpassword
 
