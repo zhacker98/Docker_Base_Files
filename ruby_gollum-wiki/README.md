@@ -7,6 +7,10 @@
 ### docker run -d --name my_wiki -v wiki:/wiki/ -p4567:4567 ruby_gollum-wiki
 #### YOU CAN MAP THE EXTERNAL PORT TO WHATEVER YOU LIKE
 
+### docker exec -it my_wiki bash
+## cd /wiki/ (should already be in that directory)
+## git init
+
 #### OPEN BROWSER TO x.x.x.x:4567
 
 ## To save wiki , run the following
